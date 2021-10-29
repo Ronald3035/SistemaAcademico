@@ -2,7 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
-
+use App\Http\Controllers\Padre_tutorController;
+use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\AdministrativoController;
+use App\Http\Controllers\GradoController;
+use App\Http\Controllers\ParaleloController;
+use App\Http\Controllers\CursoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +35,13 @@ Route::get('/template',function(){
 	return view('template/index');
 });
 Route::resource('persona',PersonaController::class);
+Route::get('persona/{id}/destroy',[PersonaController::class,'destroy'])->name('persona.destroy');
+
+Route::resource('padre_tutor',Padre_tutorController::class);
+Route::resource('estudiante',EstudianteController::class);
+Route::resource('docente',DocenteController::class);
+Route::resource('administrativo',AdministrativoController::class);
+
+Route::resource('grado',GradoController::class);
+Route::resource('paralelo',ParaleloController::class);
+Route::resource('curso',CursoController::class);
